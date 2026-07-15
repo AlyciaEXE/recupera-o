@@ -117,17 +117,31 @@
     }
 
     function cadastrar() {
- let erros = false;
-        for (let i = 0; i < caracteres.length; i++) {
-            if (nome.value.length == caracteres.includes) {
-                 window.alert("Não utilizar caracteres especiais/numeros");
-                 erros = true;
-            } else {
-erros = false
-            }
+
+        let nome = form_postagem.nome.value;
+
+    let erros = false;
+    for (let i = 0; i < nome.length; i++) {
+
+    
+        if (caracteres.includes(nome[i])) {
+
+            alert("O nome do autor não pode conter números ou caracteres especiais!!");
+
+            erros = true;
+
+            break;
+
         }
+
+    }
+
+    if (erros) {
+
+        return false;
+    }
         var corpo = {
-            nome: form_postagem.nome.value
+            nome: nome
 
         }
 
