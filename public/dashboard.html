@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <title>Recuperação | Dashboard</title>
+
+    <link rel="stylesheet" href="./css/painel.css" />
+
+    <script src="./js/alerta.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- scripts do Chart.js - 2022-1 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!--FONT AWESOME-->
+    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
+</head>
+<body>
+     <div class="janela">
+        <div class="header-left">
+            <h1>Livraria SPTech</h1>
+
+            <div class="hello">
+                <h3>Olá, usuário!</h3>
+            </div>
+
+            <div class="botoes-nav">
+
+                <div class="btn-nav-white">
+                    <a href="/">
+                        <h3>Acervo</h3>
+                    </a>
+                </div>
+
+                <div class="btn-nav-white">
+                    <a href="./cadastrar-livro.html">
+                        <h3>Cadastrar livro</h3>
+                    </a>
+                </div>
+
+                <div class="btn-nav-white">
+                    <a href="./cadastrar-autor.html">
+                        <h3>Cadastrar autor</h3>
+                    </a>
+                </div>
+
+
+                <div class="btn-nav-white">
+                    <a href="./cadastrar-genero.html">
+                        <h3>Cadastrar gênero</h3>
+                    </a>
+                </div>
+            </div>
+
+            <div class="btn-logout">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
+
+        <div class="content-right">
+            <div class="conteudo">
+                <div class="container">
+                    <h1>Painel</h1>
+                    <div class="div-results">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <div class="cards-dashboard">
+
+        <div class="card-info">
+            <p> GÊNERO COM MAIOR QUANTIDADE DE LIVROS</p>
+            <h2 id="genero"> NOME DO GENERO</h2>
+            <p id="qtdLivro">0</p>
+
+        </div>
+
+        <div class="card-info">
+            <h2>TOP 3 AUTORES MAIS "CAROS"</h2>
+
+            <h3 id="autores"> 1 </h3>
+            <h3 id="autores"> 2</h3>
+            <h3 id="autores"> 3</h3>
+
+        </div>
+    </div>
+
+    <div class="grafico-area">
+                <div class="grafico-card" id="grafico">
+
+                    <h2> QTD DE LIVROS POR GÊNERO</h2>
+
+                    <div class="grafico-container">
+
+                        <canvas id="graficoPerfis"></canvas>
+
+                    </div>
+
+                </div>
+
+            </div>
+</body>
+<script>
+const config = {
+  type: 'bar',
+  data: data,
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  },
+};
+
+        
+
+
+
+
+
+
+
+</script>
+</html>

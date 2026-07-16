@@ -27,30 +27,4 @@ CREATE TABLE livro (
     CONSTRAINT fk_livro_genero FOREIGN KEY (fkGenero) REFERENCES genero(id)
 );
 
-|||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-CREATE DATABASE livraria;
-USE livraria;
 
-CREATE TABLE Autor (
-idAutor INT PRIMARY KEY AUTO_INCREMENT,
-Nome VARCHAR(50));
-
-CREATE TABLE Genero(
-idGenero INT PRIMARY KEY AUTO_INCREMENT,
-tipo VARCHAR(60));
-
-CREATE TABLE Livro (
-idLivro INT PRIMARY KEY AUTO_INCREMENT,
-fkAutor INT,
-Titulo VARCHAR(100),
-fkGenero INT,
-Descrição VARCHAR(150),
-CONSTRAINT fk_Genero FOREIGN KEY (fkGenero) REFERENCES Genero(idGenero),
-CONSTRAINT fk_Autor FOREIGN KEY (fkAutor) REFERENCES Autor(idAutor));
-
-CREATE TABLE Preco (
-idPreco INT PRIMARY KEY AUTO_INCREMENT,
-Compra DECIMAL(5,2),
-Venda DECIMAL(5,2),
-fkLivro INT,
-CONSTRAINT fk_Livro FOREIGN KEY (fkLivro) REFERENCES Livro(idLivro));

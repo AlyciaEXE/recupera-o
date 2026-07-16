@@ -59,7 +59,7 @@
 
 
                 <div class="btn-nav-white">
-                    <a href="./painel.html">
+                    <a href="./dashboard.html">
                         <h3>Painel</h3>
                     </a>
                 </div>
@@ -93,6 +93,7 @@
                                 <br>
                                 <select name="genero" id="fkGenero_lista">
                                     <option hidden selected> - Escolha uma opção - </option>
+
                                 </select>
                             </label>
 
@@ -115,6 +116,11 @@
                                 <input name="precoVenda" id="precoVenda" maxlength="20" type="Text"></input>
                             </label>
 
+                              <label>
+                                Quantidade de Livros em estoque:
+                                <br>
+                                <input name="qtd_livros" id="qtd_estoque" maxlength="20" type="Text"></input>
+                            </label>
 
                             <button>Cadastrar</button>
                         </form>
@@ -140,26 +146,35 @@
         document.getElementById("form_postagem").reset();
     }
 
+
     function cadastrar() {
+
         var corpo = {
             titulo: form_postagem.titulo.value,
             fkGenero: form_postagem.fkGenero_lista.value,
             fkAutor: form_postagem.fkAutor_lista.value,
             precoCompra: form_postagem.precoCompra.value,
-            precoVenda: form_postagem.precoVenda.value
+            precoVenda: form_postagem.precoVenda.value,
+            QTDestoque: form_postagem.qtd_estoque.value
+        }
+        
+
+        if (precoCompra >= 100) {
+
+        } else if (Genero == "terror" || Genero == "romance") {
+            alert("22,5% de taxa");
+        }
+        else if (precoCompra == 50) {
+            alert("25%");
+        }
+        else if (Genero == "poesia" || Genero == "terror") {
+            alert("25% de taxa");
+        }
+        else if (precoCompra > 50 && precoCompra < 100) {
+            alert("27,2% de taxa");
         }
 
-        var caracteres = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "!", "@", "#", "%", "&", "*", "?", "/", "|"];
-
-        for (let i = 0; i < caracteres.length; i++) {
-            if (fkAutor_lista.value.includes(caracteres)) {
-                window.alert("Caracteres invalidos")
-
-            }
-
-
-        }
-
+      
         fetch(`/livros/cadastrar`, {
             method: "post",
             headers: {
